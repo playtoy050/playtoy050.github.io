@@ -1,0 +1,1319 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>麻豆日历表 - 官方视频品牌站,城市生活影像与创作者社区</title>
+<meta name="description" content="麻豆日历表官方网站，深耕城市生活影像的垂直视频品牌，汇集原创高清短片、创作者社区与企业动态，为用户提供值得信赖的精品内容与日程式内容指南。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b2f4b'/%3E%3Crect x='12' y='16' width='40' height='34' rx='6' fill='%23f4b860'/%3E%3Crect x='12' y='16' width='40' height='9' rx='4' fill='%23e2604a'/%3E%3Ccircle cx='24' cy='34' r='3.4' fill='%231b2f4b'/%3E%3Ccircle cx='34' cy='34' r='3.4' fill='%231b2f4b'/%3E%3Ccircle cx='44' cy='34' r='3.4' fill='%231b2f4b'/%3E%3Ccircle cx='24' cy='44' r='3.4' fill='%231b2f4b'/%3E%3Ccircle cx='34' cy='44' r='3.4' fill='%231b2f4b'/%3E%3C/svg%3E">
+<style>
+:root{
+  --md-navy:#16283f;
+  --md-navy-2:#1f3a5c;
+  --md-amber:#f4b860;
+  --md-amber-deep:#d9922f;
+  --md-coral:#e2604a;
+  --md-mist:#eef3f9;
+  --md-paper:#fbfaf7;
+  --md-ink:#22303f;
+  --md-ink-soft:#57677a;
+  --md-line:#d9e2ec;
+  --md-teal:#2f8f83;
+  --md-radius:16px;
+  --md-shadow:0 10px 30px rgba(22,40,63,.10);
+  --md-shadow-sm:0 4px 14px rgba(22,40,63,.08);
+  --md-sticky:118px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--md-sticky)}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,"Segoe UI",sans-serif;
+  color:var(--md-ink);
+  background:var(--md-paper);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+h1,h2,h3,h4{margin:0 0 .5em;line-height:1.3;font-weight:800}
+p{margin:0 0 1em}
+ul,ol{margin:0;padding-left:1.15em}
+.md-wrap{width:min(1180px,92vw);margin:0 auto}
+
+/* ============ 吸顶：公告条 + 页头 ============ */
+.md-sticky-top{position:sticky;top:0;z-index:60}
+.md-notice{
+  background:var(--md-navy);
+  color:#e9f1fb;
+  font-size:.86rem;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+.md-notice .md-wrap{
+  display:flex;align-items:center;gap:14px;
+  padding:7px 0;overflow:hidden;
+}
+.md-notice-badge{
+  flex:0 0 auto;background:var(--md-coral);color:#fff;
+  font-size:.72rem;font-weight:700;letter-spacing:.06em;
+  padding:2px 9px;border-radius:999px;
+}
+.md-notice-track{display:flex;gap:34px;white-space:nowrap;overflow-x:auto;scrollbar-width:none}
+.md-notice-track::-webkit-scrollbar{display:none}
+.md-notice-track a{opacity:.92}
+.md-notice-track a:hover{color:var(--md-amber)}
+.md-notice time{color:var(--md-amber);font-weight:700;margin-right:6px}
+
+.md-header{background:rgba(251,250,247,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--md-line);box-shadow:0 6px 18px rgba(22,40,63,.05)}
+.md-header .md-wrap{display:flex;align-items:center;gap:20px;padding:12px 0}
+.md-brand{display:flex;align-items:center;gap:11px;flex:0 0 auto}
+.md-brand-mark{
+  width:42px;height:42px;border-radius:12px;
+  background:linear-gradient(150deg,var(--md-navy),var(--md-navy-2));
+  display:grid;place-items:center;color:var(--md-amber);
+  font-weight:900;font-size:1.05rem;letter-spacing:-.02em;
+  box-shadow:inset 0 0 0 2px rgba(244,184,96,.45);
+}
+.md-brand-name{font-size:1.12rem;font-weight:900;letter-spacing:.02em;line-height:1.15}
+.md-brand-sub{font-size:.66rem;color:var(--md-ink-soft);letter-spacing:.16em;text-transform:uppercase}
+.md-nav{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+.md-nav a{
+  padding:7px 12px;border-radius:9px;font-size:.9rem;font-weight:600;color:var(--md-ink-soft);
+  transition:.2s;
+}
+.md-nav a:hover{background:var(--md-mist);color:var(--md-navy)}
+.md-search{position:relative;flex:0 1 230px;min-width:150px}
+.md-search input{
+  width:100%;padding:9px 34px 9px 14px;border-radius:999px;
+  border:1px solid var(--md-line);background:#fff;font-size:.86rem;color:var(--md-ink);
+  outline:none;transition:.2s;
+}
+.md-search input:focus{border-color:var(--md-amber-deep);box-shadow:0 0 0 3px rgba(244,184,96,.28)}
+.md-search-icon{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--md-ink-soft);pointer-events:none;font-size:.9rem}
+.md-search-feedback{
+  position:absolute;top:calc(100% + 8px);left:0;right:0;
+  background:#fff;border:1px solid var(--md-line);border-radius:12px;
+  padding:10px 12px;font-size:.8rem;color:var(--md-ink-soft);
+  box-shadow:var(--md-shadow-sm);display:none;z-index:70;
+}
+.md-search-feedback.md-show{display:block}
+.md-search-feedback strong{color:var(--md-navy)}
+.md-nav-toggle{
+  display:none;width:42px;height:42px;border-radius:11px;
+  border:1px solid var(--md-line);background:#fff;margin-left:auto;
+  align-items:center;justify-content:center;flex-direction:column;gap:4px;
+}
+.md-nav-toggle span{display:block;width:18px;height:2px;background:var(--md-navy);border-radius:2px}
+
+/* ============ 按钮 ============ */
+.md-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 20px;border-radius:999px;font-size:.9rem;font-weight:700;
+  transition:.2s;border:1px solid transparent;white-space:nowrap;
+}
+.md-btn-primary{background:var(--md-coral);color:#fff;box-shadow:0 8px 20px rgba(226,96,74,.28)}
+.md-btn-primary:hover{background:#cf4f3a;transform:translateY(-1px)}
+.md-btn-ghost{background:#fff;color:var(--md-navy);border-color:var(--md-line)}
+.md-btn-ghost:hover{border-color:var(--md-amber-deep);color:var(--md-amber-deep)}
+.md-btn-navy{background:var(--md-navy);color:#fff}
+.md-btn-navy:hover{background:var(--md-navy-2)}
+.md-btn-sm{padding:7px 14px;font-size:.8rem}
+
+/* ============ 首屏 4:6 ============ */
+.md-hero{padding:46px 0 54px;background:
+  radial-gradient(900px 380px at 85% -8%, rgba(244,184,96,.24), transparent 62%),
+  radial-gradient(700px 320px at 0% 100%, rgba(47,143,131,.12), transparent 60%),
+  var(--md-paper);
+}
+.md-hero-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,6fr);gap:44px;align-items:center}
+.md-hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--md-amber-deep);background:rgba(244,184,96,.16);
+  padding:5px 13px;border-radius:999px;margin-bottom:18px;
+}
+.md-hero-eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--md-coral)}
+.md-hero h1{font-size:clamp(2.1rem,4.2vw,3.15rem);letter-spacing:-.02em;color:var(--md-navy);margin-bottom:14px}
+.md-hero h1 em{font-style:normal;color:var(--md-amber-deep)}
+.md-hero-lead{font-size:1.02rem;color:var(--md-ink-soft);max-width:44ch}
+.md-hero-intro{
+  font-size:.9rem;color:var(--md-ink-soft);background:#fff;border-left:4px solid var(--md-amber);
+  padding:14px 16px;border-radius:0 12px 12px 0;box-shadow:var(--md-shadow-sm);margin:18px 0 22px;
+}
+.md-hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.md-hero-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;border-top:1px dashed var(--md-line);padding-top:18px}
+.md-hero-stats div{min-width:0}
+.md-hero-stats b{display:block;font-size:1.32rem;color:var(--md-navy);letter-spacing:-.02em}
+.md-hero-stats span{font-size:.76rem;color:var(--md-ink-soft)}
+.md-hero-visual{position:relative}
+.md-hero-visual figure{margin:0;border-radius:22px;overflow:hidden;box-shadow:0 24px 50px rgba(22,40,63,.18);background:#0f1e30}
+.md-hero-visual img{width:100%;aspect-ratio:16/11;object-fit:cover}
+.md-hero-caption{
+  position:relative;margin:-52px 16px 0;background:rgba(22,40,63,.92);color:#f1f6fc;
+  padding:14px 18px;border-radius:14px;backdrop-filter:blur(6px);
+}
+.md-hero-caption strong{display:block;font-size:.95rem;margin-bottom:2px}
+.md-hero-caption span{font-size:.76rem;color:#a9c0d8}
+.md-hero-chip{
+  position:absolute;top:16px;left:16px;background:var(--md-coral);color:#fff;
+  font-size:.74rem;font-weight:800;letter-spacing:.08em;padding:5px 12px;border-radius:999px;
+}
+
+/* ============ 通用 section ============ */
+.md-section{padding:56px 0}
+.md-section--mist{background:var(--md-mist)}
+.md-section--navy{background:var(--md-navy);color:#e8f0f9}
+.md-section--navy h2,.md-section--navy h3{color:#fff}
+.md-section--navy p,.md-section--navy li{color:#c2d3e6}
+.md-sec-head{margin-bottom:30px;max-width:820px}
+.md-sec-tag{font-size:.74rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--md-amber-deep);display:block;margin-bottom:8px}
+.md-section--navy .md-sec-tag{color:var(--md-amber)}
+.md-sec-head h2{font-size:clamp(1.5rem,2.6vw,2rem);color:var(--md-navy)}
+.md-section--navy .md-sec-head h2{color:#fff}
+.md-sec-head p{color:var(--md-ink-soft);margin:0;font-size:.94rem}
+.md-section--navy .md-sec-head p{color:#b9cbe0}
+
+/* ============ 焦点区 ============ */
+.md-focus-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:26px}
+.md-focus-main{background:#fff;border-radius:var(--md-radius);overflow:hidden;box-shadow:var(--md-shadow);display:flex;flex-direction:column}
+.md-focus-main figure{margin:0;position:relative}
+.md-focus-main img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.md-play{
+  position:absolute;inset:0;display:grid;place-items:center;
+  background:linear-gradient(180deg,rgba(15,30,48,.05),rgba(15,30,48,.42));
+}
+.md-play i{width:62px;height:62px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 22px rgba(0,0,0,.28)}
+.md-play i::after{content:"";width:0;height:0;border-left:16px solid var(--md-navy);border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
+.md-focus-main .md-body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
+.md-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.76rem;color:var(--md-ink-soft);margin-bottom:8px}
+.md-tag{background:var(--md-mist);color:var(--md-navy-2);border-radius:999px;padding:2px 10px;font-weight:700;font-size:.72rem}
+.md-tag--amber{background:rgba(244,184,96,.22);color:#8a5b0e}
+.md-focus-main h3{font-size:1.18rem;color:var(--md-navy)}
+.md-focus-main p{font-size:.9rem;color:var(--md-ink-soft)}
+.md-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:auto;padding-top:12px;border-top:1px solid var(--md-line)}
+.md-action{
+  display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:700;
+  color:var(--md-ink-soft);padding:6px 12px;border-radius:999px;background:var(--md-mist);transition:.18s;
+}
+.md-action:hover{background:#e2eaf4;color:var(--md-navy)}
+.md-action.md-liked{background:rgba(226,96,74,.14);color:var(--md-coral)}
+.md-action.md-saved{background:rgba(244,184,96,.2);color:#8a5b0e}
+.md-side-list{display:grid;gap:14px;align-content:start}
+.md-side-item{
+  display:grid;grid-template-columns:96px minmax(0,1fr);gap:14px;
+  background:#fff;border-radius:14px;padding:12px;box-shadow:var(--md-shadow-sm);
+  border:1px solid transparent;transition:.2s;
+}
+.md-side-item:hover{border-color:rgba(244,184,96,.65);transform:translateY(-2px)}
+.md-side-item img{width:96px;height:72px;object-fit:cover;border-radius:9px}
+.md-side-item h4{margin:0 0 4px;font-size:.92rem;color:var(--md-navy);line-height:1.45}
+.md-side-item span{font-size:.74rem;color:var(--md-ink-soft)}
+
+/* ============ 视频列表 ============ */
+.md-video-list{display:grid;gap:16px}
+.md-video-row{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:center;
+  background:#fff;border:1px solid var(--md-line);border-radius:14px;padding:18px 20px;transition:.2s;
+}
+.md-video-row:hover{border-color:var(--md-amber-deep);box-shadow:var(--md-shadow-sm)}
+.md-video-row h3{font-size:1.02rem;color:var(--md-navy);margin-bottom:6px}
+.md-video-row p{font-size:.86rem;color:var(--md-ink-soft);margin-bottom:8px}
+.md-video-row .md-meta{margin-bottom:0}
+.md-video-row .md-actions{border:0;padding:0;margin:0;flex-direction:column;align-items:flex-end}
+.md-num{
+  flex:0 0 auto;width:34px;height:34px;border-radius:10px;background:var(--md-navy);
+  color:var(--md-amber);display:grid;place-items:center;font-weight:900;font-size:.9rem;
+}
+.md-row-left{display:flex;gap:14px;align-items:flex-start;min-width:0}
+
+/* ============ 关键词解析长文 ============ */
+.md-article{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:34px}
+.md-article h3{font-size:1.12rem;color:var(--md-navy);margin-top:1.4em}
+.md-article p{font-size:.94rem;color:#33475e}
+.md-article-fact{
+  background:#fff;border-radius:16px;padding:20px;box-shadow:var(--md-shadow-sm);
+  border-top:4px solid var(--md-amber);align-self:start;position:sticky;top:calc(var(--md-sticky) + 16px);
+}
+.md-article-fact h3{margin-top:0;font-size:1rem}
+.md-article-fact ul{padding-left:1.1em;font-size:.86rem;color:var(--md-ink-soft)}
+.md-article-fact li{margin-bottom:8px}
+.md-quote{
+  border-left:4px solid var(--md-teal);background:var(--md-mist);
+  padding:14px 18px;border-radius:0 12px 12px 0;font-size:.9rem;color:var(--md-navy-2);margin:18px 0;
+}
+
+/* ============ 专题 ============ */
+.md-topic-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.md-topic{background:#fff;border-radius:var(--md-radius);overflow:hidden;box-shadow:var(--md-shadow-sm);display:flex;flex-direction:column}
+.md-topic img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.md-topic .md-body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+.md-topic h3{font-size:1.05rem;color:var(--md-navy)}
+.md-topic p{font-size:.86rem;color:var(--md-ink-soft)}
+.md-status{font-size:.72rem;font-weight:800;padding:2px 10px;border-radius:999px;background:rgba(47,143,131,.14);color:#1f6a61}
+.md-topic ol{font-size:.84rem;color:var(--md-ink-soft);padding-left:1.15em;margin:10px 0 0}
+.md-topic ol li{margin-bottom:5px}
+
+/* ============ 作者矩阵 ============ */
+.md-author-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.md-author{
+  background:#fff;border-radius:14px;padding:20px;box-shadow:var(--md-shadow-sm);
+  border:1px solid var(--md-line);display:flex;flex-direction:column;transition:.2s;
+}
+.md-author:hover{transform:translateY(-3px);box-shadow:var(--md-shadow)}
+.md-author-top{display:flex;gap:13px;align-items:center;margin-bottom:12px}
+.md-avatar{
+  width:52px;height:52px;border-radius:50%;flex:0 0 auto;display:grid;place-items:center;
+  font-weight:900;font-size:1.1rem;color:#fff;box-shadow:inset 0 0 0 3px rgba(255,255,255,.4);
+}
+.md-author h3{margin:0;font-size:1rem;color:var(--md-navy)}
+.md-author-role{font-size:.74rem;color:var(--md-amber-deep);font-weight:700}
+.md-author p{font-size:.84rem;color:var(--md-ink-soft);margin-bottom:12px}
+.md-author-stats{display:flex;gap:14px;font-size:.76rem;color:var(--md-ink-soft);border-top:1px dashed var(--md-line);padding-top:10px;margin-top:auto}
+.md-author-stats b{color:var(--md-navy)}
+
+/* ============ 评论 ============ */
+.md-comment-cols{columns:2;column-gap:20px}
+.md-comment{
+  break-inside:avoid;background:#fff;border-radius:13px;padding:16px 18px;
+  margin-bottom:18px;box-shadow:var(--md-shadow-sm);border-left:3px solid var(--md-amber);
+}
+.md-comment:nth-child(2n){border-left-color:var(--md-teal)}
+.md-comment:nth-child(3n){border-left-color:var(--md-coral)}
+.md-comment-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:6px}
+.md-comment-head b{font-size:.86rem;color:var(--md-navy)}
+.md-comment-head time{font-size:.72rem;color:#93a3b5}
+.md-comment p{font-size:.85rem;color:var(--md-ink-soft);margin:0}
+.md-stars{color:var(--md-amber-deep);font-size:.8rem;letter-spacing:1px}
+
+/* ============ 榜单 ============ */
+.md-rank-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.md-rank{background:#fff;border-radius:14px;padding:18px 20px;box-shadow:var(--md-shadow-sm)}
+.md-rank h3{font-size:1rem;color:var(--md-navy);display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.md-rank h3 span{font-size:.68rem;background:var(--md-navy);color:var(--md-amber);padding:2px 8px;border-radius:999px;letter-spacing:.06em}
+.md-rank ol{list-style:none;padding:0;margin:0;display:grid;gap:9px}
+.md-rank li{display:flex;gap:10px;font-size:.85rem;color:var(--md-ink-soft);align-items:baseline}
+.md-rank li b{color:var(--md-navy);width:18px;flex:0 0 auto}
+.md-rank li em{font-style:normal;margin-left:auto;color:#94a4b6;font-size:.76rem}
+
+/* ============ 动态 / FAQ / 合作 ============ */
+.md-news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.md-news{background:#fff;border-radius:13px;padding:17px 19px;box-shadow:var(--md-shadow-sm);border-top:3px solid var(--md-amber)}
+.md-news time{font-size:.74rem;color:var(--md-amber-deep);font-weight:800}
+.md-news h3{font-size:.94rem;margin:6px 0 5px;color:var(--md-navy)}
+.md-news p{font-size:.82rem;color:var(--md-ink-soft);margin:0}
+
+.md-faq{display:grid;gap:10px;max-width:900px}
+.md-faq details{background:#fff;border:1px solid var(--md-line);border-radius:12px;padding:14px 18px;transition:.2s}
+.md-faq details[open]{border-color:var(--md-amber-deep);box-shadow:var(--md-shadow-sm)}
+.md-faq summary{font-weight:700;font-size:.92rem;color:var(--md-navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.md-faq summary::-webkit-details-marker{display:none}
+.md-faq summary::after{content:"+";font-size:1.15rem;color:var(--md-amber-deep);font-weight:700;line-height:1}
+.md-faq details[open] summary::after{content:"–"}
+.md-faq p{font-size:.85rem;color:var(--md-ink-soft);margin:10px 0 0}
+
+.md-partners{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+.md-partner{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);
+  border-radius:12px;padding:18px;text-align:center;font-weight:800;font-size:.92rem;color:#eef4fb;
+  letter-spacing:.04em;
+}
+.md-partner small{display:block;font-weight:500;font-size:.72rem;color:#9db4cc;margin-top:4px;letter-spacing:.02em}
+.md-callout{
+  background:linear-gradient(135deg,var(--md-navy),var(--md-navy-2));
+  color:#eaf2fb;border-radius:18px;padding:30px;display:flex;flex-wrap:wrap;gap:20px;
+  align-items:center;justify-content:space-between;box-shadow:var(--md-shadow);
+}
+.md-callout h2{color:#fff;font-size:1.28rem;margin-bottom:6px}
+.md-callout p{color:#b9cbe0;font-size:.9rem;margin:0;max-width:60ch}
+
+/* ============ 页脚 ============ */
+.md-footer{background:var(--md-navy);color:#b9cbe0;padding:48px 0 26px;font-size:.86rem}
+.md-footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr;gap:32px;margin-bottom:32px}
+.md-footer h4{color:#fff;font-size:.9rem;margin-bottom:12px;letter-spacing:.04em}
+.md-footer ul{list-style:none;padding:0;margin:0;display:grid;gap:7px}
+.md-footer a:hover{color:var(--md-amber)}
+.md-footer-brand{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.md-footer-brand .md-brand-name{color:#fff}
+.md-footer-brand .md-brand-sub{color:#8ba6c2}
+.md-footer-bottom{border-top:1px solid rgba(255,255,255,.13);padding-top:18px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;font-size:.78rem;color:#8ba6c2}
+
+/* ============ Toast / 返回顶部 / 弹窗 ============ */
+.md-toast{
+  position:fixed;left:50%;bottom:30px;transform:translate(-50%,20px);
+  background:var(--md-navy);color:#fff;padding:11px 22px;border-radius:999px;
+  font-size:.85rem;font-weight:600;box-shadow:var(--md-shadow);
+  opacity:0;pointer-events:none;transition:.3s;z-index:120;
+}
+.md-toast.md-show{opacity:1;transform:translate(-50%,0)}
+.md-top{
+  position:fixed;right:22px;bottom:26px;width:46px;height:46px;border-radius:50%;
+  background:var(--md-navy);color:var(--md-amber);display:grid;place-items:center;
+  font-size:1.05rem;box-shadow:var(--md-shadow);z-index:110;
+  opacity:0;pointer-events:none;transition:.25s;
+}
+.md-top.md-show{opacity:1;pointer-events:auto}
+.md-modal{
+  position:fixed;inset:0;background:rgba(15,30,48,.55);display:none;
+  place-items:center;padding:20px;z-index:130;backdrop-filter:blur(3px);
+}
+.md-modal.md-show{display:grid}
+.md-modal-box{background:#fff;border-radius:18px;max-width:460px;width:100%;padding:26px;box-shadow:0 30px 70px rgba(0,0,0,.3);max-height:86vh;overflow:auto}
+.md-modal-box h3{color:var(--md-navy);font-size:1.1rem;margin-bottom:8px}
+.md-modal-box p{font-size:.88rem;color:var(--md-ink-soft)}
+.md-modal-box label{display:block;font-size:.8rem;font-weight:700;color:var(--md-navy);margin:12px 0 5px}
+.md-modal-box input,.md-modal-box textarea{
+  width:100%;border:1px solid var(--md-line);border-radius:10px;padding:9px 12px;
+  font:inherit;font-size:.86rem;outline:none;
+}
+.md-modal-box input:focus,.md-modal-box textarea:focus{border-color:var(--md-amber-deep);box-shadow:0 0 0 3px rgba(244,184,96,.25)}
+.md-modal-foot{display:flex;justify-content:flex-end;gap:10px;margin-top:18px}
+
+@media (max-width:980px){
+  .md-hero-grid{grid-template-columns:1fr;gap:30px}
+  .md-focus-grid{grid-template-columns:1fr}
+  .md-article{grid-template-columns:1fr}
+  .md-article-fact{position:static}
+  .md-footer-grid{grid-template-columns:1fr 1fr;gap:24px}
+  .md-video-row{grid-template-columns:1fr}
+  .md-video-row .md-actions{flex-direction:row;align-items:center;justify-content:flex-start;margin-top:4px}
+}
+@media (max-width:820px){
+  :root{--md-sticky:112px}
+  .md-nav-toggle{display:flex}
+  .md-nav{
+    display:none;position:absolute;left:0;right:0;top:100%;
+    background:var(--md-paper);border-bottom:1px solid var(--md-line);
+    padding:12px 4vw 18px;box-shadow:var(--md-shadow-sm);flex-direction:column;gap:2px;
+  }
+  .md-nav.md-open{display:flex}
+  .md-nav a{padding:11px 14px;font-size:.95rem}
+  .md-search{order:3;flex:1 1 100%;margin-top:4px}
+  .md-header .md-wrap{flex-wrap:wrap;position:relative}
+  .md-comment-cols{columns:1}
+}
+@media (max-width:560px){
+  .md-hero-stats{grid-template-columns:1fr 1fr}
+  .md-hero-actions .md-btn{flex:1 1 auto;justify-content:center}
+  .md-footer-grid{grid-template-columns:1fr}
+  .md-section{padding:42px 0}
+  .md-callout{padding:22px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- ===== S1 公告条 + 页头（吸顶） ===== -->
+<div class="md-sticky-top">
+  <div class="md-notice" role="region" aria-label="站内公告">
+    <div class="md-wrap">
+      <span class="md-notice-badge">官方发布</span>
+      <div class="md-notice-track" id="mdNoticeTrack">
+        <a href="#mdVideo"><time>11月22日</time>《麻豆日历表·城南早市十二时辰》正片上线</a>
+        <a href="#mdTopic"><time>11月20日</time>「冬日城市影像企划」新一期开放报名</a>
+        <a href="#mdAuthor"><time>11月18日</time>创作者「林一帧」入驻满两年，作品集上线</a>
+        <a href="#mdNews"><time>11月15日</time>官方高清片源库完成 4K 转码升级</a>
+        <a href="#mdRank"><time>11月12日</time>本月口碑榜与新人榜公布</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="md-header">
+    <div class="md-wrap">
+      <a class="md-brand" href="#mdHome">
+        <span class="md-brand-mark" aria-hidden="true">麻</span>
+        <span>
+          <span class="md-brand-name">麻豆日历表</span>
+          <span class="md-brand-sub">MD Calendar · Official</span>
+        </span>
+      </a>
+      <button class="md-nav-toggle" id="mdNavToggle" aria-label="展开或收起导航" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="md-nav" id="mdNav" aria-label="主导航">
+        <a href="#mdHome">首页</a>
+        <a href="#mdVideo">视频</a>
+        <a href="#mdTopic">专题</a>
+        <a href="#mdAuthor">创作者</a>
+        <a href="#mdRank">榜单</a>
+        <a href="#mdNews">企业动态</a>
+        <a href="#mdFaq">帮助</a>
+      </nav>
+      <div class="md-search">
+        <input type="search" id="mdSearchInput" placeholder="搜索影片、创作者、专题" aria-label="站内搜索">
+        <span class="md-search-icon" aria-hidden="true">&#128269;</span>
+        <div class="md-search-feedback" id="mdSearchFeedback" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main>
+
+<!-- ===== S2 品牌首屏（4:6 布局） ===== -->
+<section class="md-hero" id="mdHome">
+  <div class="md-wrap md-hero-grid">
+    <div>
+      <span class="md-hero-eyebrow">官方网站 · 城市生活影像</span>
+      <h1>麻豆日历表</h1>
+      <p class="md-hero-lead">把一座城市的时间，拆成可以观看的一页页影像。</p>
+      <div class="md-hero-intro">
+        麻豆日历表官方网站是一个深耕城市生活影像的垂直视频品牌，成立于 2019 年，以「日历」为内容组织方式，每天更新一条与当日节气、街景、人物相关的原创短片。作为一家持续运营的企业，我们把高清、正版、专业作为底线，为创作者与观众搭建值得信赖的内容生态。
+      </div>
+      <div class="md-hero-actions">
+        <a class="md-btn md-btn-primary" href="#mdVideo">浏览本期视频</a>
+        <a class="md-btn md-btn-ghost" href="#mdAuthor">认识创作者</a>
+        <button class="md-btn md-btn-navy" id="mdSubmitOpen" type="button">投稿入口</button>
+      </div>
+      <div class="md-hero-stats">
+        <div><b>2,180</b><span>累计上线原创短片</span></div>
+        <div><b>364<em style="font-style:normal;font-size:.9rem">万</em></b><span>社区注册观众</span></div>
+        <div><b>96.4%</b><span>用户口碑好评率</span></div>
+      </div>
+    </div>
+    <div class="md-hero-visual">
+      <figure>
+        <span class="md-hero-chip">本日精选</span>
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 550'%3E%3Cdefs%3E%3ClinearGradient id='sky' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23ffd89b'/%3E%3Cstop offset='0.55' stop-color='%23f6a65a'/%3E%3Cstop offset='1' stop-color='%23d96a4a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='550' fill='url(%23sky)'/%3E%3Ccircle cx='595' cy='155' r='58' fill='%23fff2cf' opacity='0.9'/%3E%3Cpath d='M0 380 L120 330 L230 372 L340 318 L470 366 L600 322 L720 368 L800 340 L800 550 L0 550 Z' fill='%232a3d55'/%3E%3Cpath d='M0 440 L150 402 L300 442 L450 404 L610 446 L800 412 L800 550 L0 550 Z' fill='%231b2f4b'/%3E%3Cg fill='%23f6c86a'%3E%3Crect x='92' y='424' width='16' height='46' rx='3'/%3E%3Crect x='132' y='404' width='14' height='66' rx='3'/%3E%3Crect x='212' y='430' width='18' height='42' rx='3'/%3E%3Crect x='640' y='418' width='16' height='52' rx='3'/%3E%3Crect x='690' y='436' width='20' height='34' rx='3'/%3E%3C/g%3E%3Cg stroke='%23ffe9bd' stroke-width='3' opacity='0.7'%3E%3Cpath d='M60 470 h120'/%3E%3Cpath d='M540 486 h180'/%3E%3C/g%3E%3Cg fill='%23fbe6c0'%3E%3Ccircle cx='250' cy='230' r='5' opacity='0.8'/%3E%3Ccircle cx='380' cy='190' r='4' opacity='0.65'/%3E%3Ccircle cx='460' cy='260' r='6' opacity='0.75'/%3E%3C/g%3E%3C/svg%3E" alt="麻豆日历表首屏主视觉：黄昏城市天际线与暖色灯火">
+      </figure>
+      <div class="md-hero-caption">
+        <strong>《城南早市十二时辰》</strong>
+        <span>2026 年 11 月 22 日 · 城市探索 · 12:40 · 高清 4K</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== S3 焦点视频 + 列表 ===== -->
+<section class="md-section" id="mdVideo">
+  <div class="md-wrap">
+    <div class="md-sec-head">
+      <span class="md-sec-tag">今日焦点</span>
+      <h2>麻豆日历表本期重点视频</h2>
+      <p>以日历为索引，我们每天挑一条值得停下来看的原创短片，并为它配上完整的创作说明与数据。</p>
+    </div>
+
+    <div class="md-focus-grid">
+      <!-- 焦点大图卡 -->
+      <article class="md-focus-main">
+        <figure>
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23eef3f9'/%3E%3Crect x='0' y='0' width='800' height='120' fill='%232f8f83'/%3E%3Cg fill='%2316283f'%3E%3Crect x='64' y='168' width='150' height='210' rx='6'/%3E%3Crect x='240' y='132' width='190' height='246' rx='6'/%3E%3Crect x='456' y='196' width='130' height='182' rx='6'/%3E%3Crect x='612' y='150' width='150' height='228' rx='6'/%3E%3C/g%3E%3Cg fill='%23f4b860'%3E%3Crect x='80' y='190' width='26' height='22'/%3E%3Crect x='122' y='190' width='26' height='22'/%3E%3Crect x='164' y='190' width='26' height='22'/%3E%3Crect x='260' y='156' width='30' height='24'/%3E%3Crect x='306' y='156' width='30' height='24'/%3E%3Crect x='352' y='156' width='30' height='24'/%3E%3Crect x='474' y='220' width='26' height='22'/%3E%3Crect x='516' y='220' width='26' height='22'/%3E%3Crect x='630' y='176' width='28' height='22'/%3E%3Crect x='676' y='176' width='28' height='22'/%3E%3C/g%3E%3Cg fill='%23cfe0ee'%3E%3Crect x='80' y='232' width='26' height='22'/%3E%3Crect x='122' y='232' width='26' height='22'/%3E%3Crect x='164' y='232' width='26' height='22'/%3E%3Crect x='80' y='274' width='26' height='22'/%3E%3Crect x='164' y='274' width='26' height='22'/%3E%3Crect x='260' y='198' width='30' height='24'/%3E%3Crect x='306' y='198' width='30' height='24'/%3E%3Crect x='352' y='198' width='30' height='24'/%3E%3Crect x='260' y='240' width='30' height='24'/%3E%3Crect x='352' y='240' width='30' height='24'/%3E%3C/g%3E%3Ccircle cx='400' cy='410' r='0'/%3E%3C/svg%3E" alt="麻豆日历表城市日历墙视频封面">
+          <div class="md-play" aria-hidden="true"><i></i></div>
+        </figure>
+        <div class="md-body">
+          <div class="md-meta">
+            <span class="md-tag md-tag--amber">城市探索</span>
+            <span class="md-tag">在地文化</span>
+            <span>林一帧</span><span>·</span><span>11-22</span>
+          </div>
+          <h3>城南早市十二时辰：用一整天，拍一条三分钟的街</h3>
+          <p>凌晨四点的鱼摊、七点的豆腐脑、十一点半收摊的修表匠。我们把一个菜市场的十二个时辰压缩成三分钟，试着回答一个问题：一条街的记忆，能不能被日历留下来。</p>
+          <div class="md-meta">
+            <span>播放 12.8 万</span><span>·</span><span>点赞 <b class="md-like-count" data-base="6842">6842</b></span><span>·</span><span>收藏 3204</span>
+          </div>
+          <div class="md-actions">
+            <button class="md-action md-like-btn" type="button" data-count="6842">&#9825; 点赞</button>
+            <button class="md-action md-save-btn" type="button">&#9734; 收藏</button>
+            <button class="md-action md-comment-open" type="button">&#128172; 评论</button>
+            <button class="md-action md-copy-btn" type="button" data-title="城南早市十二时辰">&#128279; 复制链接</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 侧栏列表 -->
+      <div class="md-side-list">
+        <article class="md-side-item">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 144'%3E%3Crect width='192' height='144' fill='%231f3a5c'/%3E%3Ccircle cx='140' cy='42' r='22' fill='%23f4b860'/%3E%3Cpath d='M0 96 L48 70 L92 98 L138 72 L192 100 L192 144 L0 144 Z' fill='%232f8f83'/%3E%3Cpath d='M0 116 L60 96 L120 120 L192 100 L192 144 L0 144 Z' fill='%2316283f'/%3E%3C/svg%3E" alt="城市夜行散步vlog封面缩略图">
+          <div>
+            <h4>夜行地图：从老码头走到新桥</h4>
+            <span>旅行见闻 · 周小满 · 8.6 万播放</span>
+          </div>
+        </article>
+        <article class="md-side-item">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 144'%3E%3Crect width='192' height='144' fill='%23fbf3e3'/%3E%3Crect x='24' y='28' width='144' height='88' rx='8' fill='%23ffffff' stroke='%23e2604a' stroke-width='3'/%3E%3Crect x='42' y='48' width='52' height='8' rx='4' fill='%2316283f'/%3E%3Crect x='42' y='66' width='108' height='6' rx='3' fill='%23c9d6e4'/%3E%3Crect x='42' y='82' width='84' height='6' rx='3' fill='%23c9d6e4'/%3E%3Ccircle cx='150' cy='40' r='12' fill='%23f4b860'/%3E%3C/svg%3E" alt="一人食早餐手作教程封面缩略图">
+          <div>
+            <h4>十五分钟早餐：一个人也值得好好吃饭</h4>
+            <span>美食烹饪 · 阿禾 · 6.2 万播放</span>
+          </div>
+        </article>
+        <article class="md-side-item">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 144'%3E%3Crect width='192' height='144' fill='%232f8f83'/%3E%3Cg stroke='%23d8f0ea' stroke-width='3' fill='none'%3E%3Ccircle cx='66' cy='66' r='26'/%3E%3Cpath d='M66 40 v-14 M66 92 v14 M40 66 h-14 M92 66 h14'/%3E%3C/g%3E%3Crect x='120' y='86' width='54' height='40' rx='6' fill='%2316283f'/%3E%3C/svg%3E" alt="旧胶片修复教程封面缩略图">
+          <div>
+            <h4>把外公的DV带修成4K，需要几步</h4>
+            <span>手作DIY · 老陈 · 15.4 万播放</span>
+          </div>
+        </article>
+        <article class="md-side-item">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 144'%3E%3Crect width='192' height='144' fill='%23eef3f9'/%3E%3Ccircle cx='96' cy='62' r='30' fill='%23e2604a'/%3E%3Cpath d='M96 32 a30 30 0 0 0 0 60 a18 30 0 0 1 0 -60' fill='%23f4b860'/%3E%3Crect x='70' y='100' width='52' height='6' rx='3' fill='%2316283f'/%3E%3Crect x='84' y='114' width='24' height='6' rx='3' fill='%23a9bccf'/%3E%3C/svg%3E" alt="创作者访谈现场封面缩略图">
+          <div>
+            <h4>对话林一帧：我把拍城市当成上班</h4>
+            <span>人物访谈 · 编辑部 · 4.9 万播放</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 关键词解析长文 ===== -->
+<section class="md-section md-section--mist" id="mdAbout">
+  <div class="md-wrap">
+    <div class="md-sec-head">
+      <span class="md-sec-tag">深度解析</span>
+      <h2>为什么麻豆日历表用「日历」来做视频</h2>
+      <p>关键词解析 · 关于品牌定位、内容方法与社区生态的完整说明</p>
+    </div>
+    <div class="md-article">
+      <div>
+        <p>麻豆日历表这个名字，本身就是一个方法论。我们不把视频当成一条条孤立的内容，而是把它看成一页页日历：每一页都对应一个具体的时间、地点与人，翻过去就没了，但你可以在任何一天回头把它找回来。作为一家持续运营的企业，我们希望用这种略显笨拙的方式，对抗信息流里那种「刷完就忘」的观看体验。</p>
+
+        <h3>一、从一张日历到一条短片：内容是怎么被生产出来的</h3>
+        <p>麻豆日历表的每一条原创短片，都从一张空白的日历格子开始。编辑部每周一会把未来十四天的节气、城市事件、地方性纪念日和社区投稿排进一张表，然后分配给对应的创作者。比如 11 月 22 日这一格，写的是「城南早市」，负责的创作者是林一帧。他要做的不是拍得更美，而是拍得更具体：鱼摊老板姓什么、修表匠的铺子开了多少年、收摊后那条街剩下什么味道。</p>
+        <p>这种生产方式有一个直接后果：我们的片子很少「爆」，但留存很好。观众会在某个特定的日子回来看某一条视频，就像翻自己的旧日历。高清、正版、专业这三件事，对麻豆日历表来说不是宣传语，而是流程的一部分。所有素材均由创作者本人拍摄并授权，官方片源库统一做 4K 转码与版本管理，任何一条片子被外链引用时，都能追溯到原始拍摄记录。</p>
+
+        <div class="md-quote">
+          「日历不会催你，它只是在那里等你翻回来。」——这是麻豆日历表内部最常被引用的一句话，也被印在编辑部墙上。
+        </div>
+
+        <h3>二、垂直领域里的长期主义：我们如何理解「城市生活影像」</h3>
+        <p>城市生活影像是一个很容易被误解的垂直领域。很多人以为它就是拍城市风景、拍街道、拍人，实际上它真正难的地方在于「关系」——人与地点之间的关系、时间与空间之间的关系、观众与自己记忆之间的关系。麻豆日历表把内容分成五个方向：城市探索、在地文化、生活方式、人物访谈、创作幕后。五个方向不是并列的栏目，而是一条片子的五个可能入口。</p>
+        <p>我们做过一次内部统计：在过去两年上线的 800 多条片子里，标题里出现具体地名的占了 62%，出现具体时间的占了 41%。这两个数字构成了麻豆日历表的内容指纹——我们更愿意拍「11 月 22 日的城南早市」，而不是「城市烟火气合集」。前者是有坐标的，后者没有。也正是这种对具体性的坚持，让我们在行业里形成了辨识度，成为一个用户首选的城市影像内容平台。</p>
+        <p>与此同时，我们不回避商业。品牌合作、城市文旅项目、线下放映活动，都是麻豆日历表持续运营的基础。但我们有一条底线：商业内容必须同样具备日历属性，也就是说，它必须能在某一天被重新打开。这条底线让我们在口碑上一直保持得比较稳。</p>
+
+        <h3>三、社区是怎么长出来的：创作者、观众与一条内容生态链</h3>
+        <p>麻豆日历表的社区不是「评论区」，而是一群人共同维护的时间档案。创作者上传作品后会收到结构化反馈：哪一段被反复回看、哪一句旁白被截图最多、哪个镜头被引用进了别人的片子。观众的点赞、收藏与短评会被整理成「日历笔记」，反哺给下一位创作者。这种机制让社区有了自我生长的能力，也让新加入的创作者不必从零开始摸索。</p>
+        <p>我们的创作者矩阵目前有 120 多位长期合作者，其中三分之二来自非影视行业：有开书店的、做咖啡的、跑外卖的、在图书馆上班的。他们带来的不是技巧，而是视角。麻豆日历表做的事情，是把这些视角整理成可以持续生产的流程，并提供设备、剪辑、版权与分发上的支持。这份「陪伴」关系，是我们最看重的资产。</p>
+        <p>如果你问麻豆日历表到底是什么，我的回答是：它是一个把城市时间存档的官方网站。它不制造焦虑，不追热点，也不假装自己无所不能。它只是每天更新一页，等你哪天想起来，翻回去看看那天发生了什么。这就是我们理解的品质，也是我们愿意长期做下去的理由。</p>
+      </div>
+      <aside class="md-article-fact">
+        <h3>关键信息速览</h3>
+        <ul>
+          <li><b>成立时间：</b>2019 年 3 月，总部位于城南老城区。</li>
+          <li><b>内容方向：</b>城市探索、在地文化、生活方式、人物访谈、创作幕后。</li>
+          <li><b>更新节奏：</b>每日 1 条原创短片，每周 1 期专题企划。</li>
+          <li><b>片源标准：</b>官方高清片源库统一 4K 转码，支持正版授权追溯。</li>
+          <li><b>创作者规模：</b>长期合作创作者 120+，社区注册观众 364 万。</li>
+          <li><b>口碑数据：</b>用户好评率 96.4%，月均复看率 38.7%。</li>
+        </ul>
+        <div class="md-actions" style="border:0;padding-top:6px">
+          <button class="md-action md-share-open" type="button">&#10150; 分享本页</button>
+          <button class="md-action md-copy-btn" type="button" data-title="为什么麻豆日历表用日历做视频">&#128279; 复制链接</button>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== S4 专题企划 ===== -->
+<section class="md-section" id="mdTopic">
+  <div class="md-wrap">
+    <div class="md-sec-head">
+      <span class="md-sec-tag">专题企划</span>
+      <h2>麻豆日历表正在进行的三组专题</h2>
+      <p>专题是我们把零散日历串成线索的方式。每一组专题都有固定的更新节奏与投稿通道。</p>
+    </div>
+    <div class="md-topic-grid">
+      <article class="md-topic">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23dbe7f3'/%3E%3Cg fill='%23ffffff' opacity='0.9'%3E%3Ccircle cx='150' cy='120' r='8'/%3E%3Ccircle cx='290' cy='190' r='6'/%3E%3Ccircle cx='430' cy='110' r='10'/%3E%3Ccircle cx='600' cy='170' r='7'/%3E%3Ccircle cx='700' cy='100' r='5'/%3E%3C/g%3E%3Cpath d='M0 300 L120 250 L240 296 L370 244 L500 300 L640 252 L800 298 L800 450 L0 450 Z' fill='%232f8f83'/%3E%3Cpath d='M0 360 L160 322 L320 366 L480 320 L640 364 L800 330 L800 450 L0 450 Z' fill='%2316283f'/%3E%3Cg stroke='%23f4b860' stroke-width='4' stroke-linecap='round'%3E%3Cpath d='M250 400 l0 -70'/%3E%3Cpath d='M520 410 l0 -66'/%3E%3C/g%3E%3C/svg%3E" alt="冬日城市影像企划专题封面：雪后的城市轮廓">
+        <div class="md-body">
+          <div class="md-meta"><span class="md-status">更新中 · 第 3 期</span></div>
+          <h3>冬日城市影像企划</h3>
+          <p>每年立冬到冬至，我们用 45 天记录一座城市变冷的过程。今年新增「清晨六点的街区」子单元，向所有观众开放投稿。</p>
+          <ol>
+            <li>《早班公交的第一排》· 周小满 · 已上线</li>
+            <li>《菜市场里的热汤面》· 阿禾 · 已上线</li>
+            <li>《路灯熄灭之前》· 老陈 · 12 月 2 日上线</li>
+          </ol>
+        </div>
+      </article>
+      <article class="md-topic">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%23fbf3e3'/%3E%3Crect x='90' y='70' width='620' height='310' rx='14' fill='%23ffffff' stroke='%23e2604a' stroke-width='4'/%3E%3Crect x='140' y='120' width='240' height='14' rx='7' fill='%2316283f'/%3E%3Crect x='140' y='156' width='420' height='10' rx='5' fill='%23cfdae6'/%3E%3Crect x='140' y='182' width='360' height='10' rx='5' fill='%23cfdae6'/%3E%3Crect x='140' y='228' width='180' height='100' rx='8' fill='%23f4b860'/%3E%3Crect x='344' y='228' width='180' height='100' rx='8' fill='%232f8f83'/%3E%3Crect x='548' y='228' width='110' height='100' rx='8' fill='%23dbe7f3'/%3E%3C/svg%3E" alt="创作者幕后专题封面：拍摄脚本与分镜版">
+        <div class="md-body">
+          <div class="md-meta"><span class="md-status">长期开放</span></div>
+          <h3>一条片子的背面</h3>
+          <p>只讲创作幕后：分镜怎么画、镜头为什么删、素材怎么命名。适合正在学习拍摄的新人，也适合想看门道的观众。</p>
+          <ol>
+            <li>《十二时辰的剪辑取舍》· 林一帧 · 已上线</li>
+            <li>《我为什么删掉了最美的那个镜头》· 苏黎 · 已上线</li>
+            <li>《录音笔记：把城市噪声留下来》· 老陈 · 已上线</li>
+          </ol>
+        </div>
+      </article>
+      <article class="md-topic">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%2316283f'/%3E%3Cg fill='none' stroke='%23f4b860' stroke-width='3'%3E%3Crect x='110' y='96' width='580' height='258' rx='12'/%3E%3Cpath d='M110 168 h580'/%3E%3C/g%3E%3Cg fill='%232f8f83'%3E%3Crect x='150' y='210' width='90' height='94' rx='6'/%3E%3Crect x='272' y='234' width='90' height='70' rx='6'/%3E%3Crect x='394' y='196' width='90' height='108' rx='6'/%3E%3Crect x='516' y='222' width='90' height='82' rx='6'/%3E%3C/g%3E%3Cg fill='%23e2604a'%3E%3Ccircle cx='640' cy='132' r='10'/%3E%3C/g%3E%3C/svg%3E" alt="社区共创专题封面：多城影像拼贴">
+        <div class="md-body">
+          <div class="md-meta"><span class="md-status">征集中 · 12 月 10 日截止</span></div>
+          <h3>同一时刻，不同的城市</h3>
+          <p>晚上八点，你在的城市在发生什么？我们向所有社区成员征集同一时刻的 30 秒片段，最终剪成一条城市合唱。</p>
+          <ol>
+            <li>《八点整的下班路》· 冯小野 · 已上线</li>
+            <li>《八点整的夜校教室》· 苏黎 · 已上线</li>
+            <li>《八点整的便利店》· 社区投稿 · 待上线</li>
+          </ol>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== S5 创作者矩阵 ===== -->
+<section class="md-section md-section--mist" id="mdAuthor">
+  <div class="md-wrap">
+    <div class="md-sec-head">
+      <span class="md-sec-tag">创作者矩阵</span>
+      <h2>麻豆日历表的长期合作创作者</h2>
+      <p>他们的共同点是：都在认真过自己的日子，并且愿意把日子拍下来。</p>
+    </div>
+    <div class="md-author-grid">
+      <article class="md-author">
+        <div class="md-author-top">
+          <span class="md-avatar" style="background:linear-gradient(140deg,#16283f,#2f8f83)">林</span>
+          <div>
+            <h3>林一帧</h3>
+            <span class="md-author-role">城市探索 · 招牌作者</span>
+          </div>
+        </div>
+        <p>在城南住了十一年，拍同一片街区拍了六年。习惯用一整天换三分钟素材，相信长镜头里藏着城市的呼吸。作品多以固定机位与自然声为主，剪辑克制，被社区称为「慢半拍的记录者」。</p>
+        <div class="md-author-stats"><span>作品 <b>86</b></span><span>粉丝 <b>18.2 万</b></span></div>
+        <button class="md-action md-author-open" type="button" data-author="林一帧" style="margin-top:12px;align-self:flex-start">查看作者档案</button>
+      </article>
+      <article class="md-author">
+        <div class="md-author-top">
+          <span class="md-avatar" style="background:linear-gradient(140deg,#e2604a,#f4b860)">禾</span>
+          <div>
+            <h3>阿禾</h3>
+            <span class="md-author-role">美食烹饪 · 生活方式</span>
+          </div>
+        </div>
+        <p>白天在社区食堂上班，晚上回家拍一人食。擅长把家常菜拍出秩序感：从洗菜开始，一道菜只用三个镜头讲完。她的视频里很少出现脸，但每一帧都能闻到烟火气，是新观众最常从她的作品入坑。</p>
+        <div class="md-author-stats"><span>作品 <b>124</b></span><span>粉丝 <b>21.6 万</b></span></div>
+        <button class="md-action md-author-open" type="button" data-author="阿禾" style="margin-top:12px;align-self:flex-start">查看作者档案</button>
+      </article>
+      <article class="md-author">
+        <div class="md-author-top">
+          <span class="md-avatar" style="background:linear-gradient(140deg,#2f8f83,#16283f)">陈</span>
+          <div>
+            <h3>老陈</h3>
+            <span class="md-author-role">手作DIY · 创作幕后</span>
+          </div>
+        </div>
+        <p>退休前是电器维修工，现在是社区里最受欢迎的「老手艺人」。他拍修东西，也拍旧物背后的故事：一台 1987 年的收音机、一盘被水泡过的DV带。他的镜头从不修饰，却总能让人想起自己家里的某个抽屉。</p>
+        <div class="md-author-stats"><span>作品 <b>58</b></span><span>粉丝 <b>13.4 万</b></span></div>
+        <button class="md-action md-author-open" type="button" data-author="老陈" style="margin-top:12px;align-self:flex-start">查看作者档案</button>
+      </article>
+      <article class="md-author">
+        <div class="md-author-top">
+          <span class="md-avatar" style="background:linear-gradient(140deg,#8a5b0e,#f4b860)">苏</span>
+          <div>
+            <h3>苏黎</h3>
+            <span class="md-author-role">人物访谈 · 艺术美学</span>
+          </div>
+        </div>
+        <p>大学老师，业余做访谈。她采访过的对象包括环卫工、书店老板、出租车司机和一位退休的话剧演员。她的提问方式很像聊天，但总能问出让人沉默三秒的答案。她说拍人最重要的是「别急着感动」。</p>
+        <div class="md-author-stats"><span>作品 <b>41</b></span><span>粉丝 <b>9.7 万</b></span></div>
+        <button class="md-action md-author-open" type="button" data-author="苏黎" style="margin-top:12px;align-self:flex-start">查看作者档案</button>
+      </article>
+      <article class="md-author">
+        <div class="md-author-top">
+          <span class="md-avatar" style="background:linear-gradient(140deg,#1f3a5c,#e2604a)">满</span>
+          <div>
+            <h3>周小满</h3>
+            <span class="md-author-role">旅行见闻 · 城市探索</span>
+          </div>
+        </div>
+        <p>公交司机，每天在城市里跑同一条线。他把车窗当作取景框，拍沿线变化了十年的街景。他的「夜行地图」系列被很多本地人当作散步指南，评论区常有人说「这条路我坐了二十年，第一次这样看它」。</p>
+        <div class="md-author-stats"><span>作品 <b>73</b></span><span>粉丝 <b>15.8 万</b></span></div>
+        <button class="md-action md-author-open" type="button" data-author="周小满" style="margin-top:12px;align-self:flex-start">查看作者档案</button>
+      </article>
+      <article class="md-author">
+        <div class="md-author-top">
+          <span class="md-avatar" style="background:linear-gradient(140deg,#57677a,#2f8f83)">野</span>
+          <div>
+            <h3>冯小野</h3>
+            <span class="md-author-role">日常记录 · 新人作者</span>
+          </div>
+        </div>
+        <p>今年刚加入社区的新人，用手机拍了一年「下班之后」。她的片子画质一般，但节奏很轻，像朋友随手递来的一杯水。她的第一条上传作品就在新人榜排到第三，社区评价是「真实得让人不好意思快进」。</p>
+        <div class="md-author-stats"><span>作品 <b>19</b></span><span>粉丝 <b>4.3 万</b></span></div>
+        <button class="md-action md-author-open" type="button" data-author="冯小野" style="margin-top:12px;align-self:flex-start">查看作者档案</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== M14 数据榜单 ===== -->
+<section class="md-section" id="mdRank">
+  <div class="md-wrap">
+    <div class="md-sec-head">
+      <span class="md-sec-tag">本周榜单</span>
+      <h2>麻豆日历表内容榜单与企业数据</h2>
+      <p>榜单每周一更新，数据来源于站内播放、完播、收藏与社区评价的综合计算结果。</p>
+    </div>
+    <div class="md-rank-grid">
+      <div class="md-rank">
+        <h3>热度榜 <span>本周</span></h3>
+        <ol>
+          <li><b>1</b>城南早市十二时辰<em>12.8万</em></li>
+          <li><b>2</b>把外公的DV带修成4K<em>15.4万</em></li>
+          <li><b>3</b>夜行地图：老码头到新桥<em>8.6万</em></li>
+          <li><b>4</b>十五分钟早餐<em>6.2万</em></li>
+          <li><b>5</b>对话林一帧<em>4.9万</em></li>
+        </ol>
+      </div>
+      <div class="md-rank">
+        <h3>新人榜 <span>11月</span></h3>
+        <ol>
+          <li><b>1</b>八点整的下班路 · 冯小野<em>3.1万</em></li>
+          <li><b>2</b>我家的窗台菜园 · 唐棠<em>2.4万</em></li>
+          <li><b>3</b>旧书店的第九年 · 沈默<em>1.9万</em></li>
+          <li><b>4</b>凌晨四点的面包房 · 江野<em>1.5万</em></li>
+          <li><b>5</b>一把椅子的修复记录 · 顾舟<em>1.2万</em></li>
+        </ol>
+      </div>
+      <div class="md-rank">
+        <h3>口碑榜 <span>综合</span></h3>
+        <ol>
+          <li><b>1</b>一条片子的背面 · 系列<em>9.6分</em></li>
+          <li><b>2</b>冬日城市影像企划<em>9.5分</em></li>
+          <li><b>3</b>同一时刻，不同的城市<em>9.4分</em></li>
+          <li><b>4</b>修表匠的三十年<em>9.3分</em></li>
+          <li><b>5</b>菜市场里的热汤面<em>9.1分</em></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== S6 用户评价 ===== -->
+<section class="md-section md-section--mist" id="mdComment">
+  <div class="md-wrap">
+    <div class="md-sec-head">
+      <span class="md-sec-tag">社区短评</span>
+      <h2>观众和创作者怎么说麻豆日历表</h2>
+      <p>来自社区的真实短评，语气、长度和关注点各不相同，我们原样保留。</p>
+    </div>
+    <div class="md-comment-cols">
+      <article class="md-comment">
+        <div class="md-comment-head"><b>南桥旧事</b><time>11-22</time></div>
+        <p>看《城南早市》的时候认出了我家楼下那个修表铺，老板居然真的还在。这片子拍得一点不煽情，但我看完坐了很久。</p>
+        <span class="md-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      </article>
+      <article class="md-comment">
+        <div class="md-comment-head"><b>一只咸鱼罐头</b><time>11-21</time></div>
+        <p>画质是真的好，4K 全屏看鱼摊上的水珠都清清楚楚。就是希望能多出点竖屏版本，通勤路上看更方便。</p>
+        <span class="md-stars">&#9733;&#9733;&#9733;&#9733;</span>
+      </article>
+      <article class="md-comment">
+        <div class="md-comment-head"><b>做咖啡的鹿</b><time>11-20</time></div>
+        <p>作为小店老板说一句，之前参加「同一时刻」投稿，编辑部给了很详细的反馈，连第 12 秒的环境音太吵都标出来了。这种认真挺少见的。</p>
+      </article>
+      <article class="md-comment">
+        <div class="md-comment-head"><b>晚班地铁乘客</b><time>11-19</time></div>
+        <p>内容更新还算稳，就是专题页有时候找起来费劲，希望导航能再清楚一点。片子本身没得说。</p>
+        <span class="md-stars">&#9733;&#9733;&#9733;&#9733;</span>
+      </article>
+      <article class="md-comment">
+        <div class="md-comment-head"><b>老片修复爱好者</b><time>11-18</time></div>
+        <p>老陈那条 DV 修复的片子我反复看了三遍，步骤讲得太细了，连软件参数都给了。这才叫教程干货，不是那种念一遍就完事的。</p>
+        <span class="md-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      </article>
+      <article class="md-comment">
+        <div class="md-comment-head"><b>大学城-周同学</b><time>11-17</time></div>
+        <p>苏黎老师的访谈好看，问的问题不客套。就是更新有点慢，一期要等好久，希望多排一点。</p>
+      </article>
+      <article class="md-comment">
+        <div class="md-comment-head"><b>菜场常客</b><time>11-16</time></div>
+        <p>第一次在视频网站上看到自己每天买菜的地方，还挺奇妙的。谢谢你们愿意拍这些不怎么「好看」的地方。</p>
+        <span class="md-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      </article>
+      <article class="md-comment">
+        <div class="md-comment-head"><b>剪辑学徒小林</b><time>11-15</time></div>
+        <p>希望官方能多做点创作灵感和脚本模板，新人真的不太会起标题。「一条片子的背面」这个专题帮了我很多。</p>
+        <span class="md-stars">&#9733;&#9733;&#9733;&#9733;</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== M10 企业动态 ===== -->
+<section class="md-section" id="mdNews">
+  <div class="md-wrap">
+    <div class="md-sec-head">
+      <span class="md-sec-tag">企业动态</span>
+      <h2>麻豆日历表官方发布与内容更新</h2>
+      <p>包括产品升级、规则调整、线下活动与内容库维护信息，均以官方发布为准。</p>
+    </div>
+    <div class="md-news-grid">
+      <article class="md-news">
+        <time>2026-11-15</time>
+        <h3>官方片源库完成 4K 转码升级</h3>
+        <p>上线两年内的全部原创短片已完成统一转码，支持更稳定的高清播放与多端同步。旧片在新版本中同步修正了字幕错位问题。</p>
+      </article>
+      <article class="md-news">
+        <time>2026-11-10</time>
+        <h3>投稿规则更新：增加素材授权说明</h3>
+        <p>为确保正版授权可追溯，投稿入口新增素材来源填写项。未填写来源的作品将进入待审状态，创作者可在后台补充。</p>
+      </article>
+      <article class="md-news">
+        <time>2026-11-02</time>
+        <h3>「冬日城市影像企划」线下放映报名开启</h3>
+        <p>本季首场线下放映定于 11 月 29 日在城南老电影院举行，共 80 个名额，社区成员可报名参与并与创作者现场交流。</p>
+      </article>
+      <article class="md-news">
+        <time>2026-10-26</time>
+        <h3>创作者成长计划第二期启动</h3>
+        <p>面向加入社区不满一年的创作者，提供设备借用、剪辑指导与专题曝光位。第二期共开放 20 个名额，报名截至 12 月 10 日。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 合作与行动 ===== -->
+<section class="md-section md-section--navy" id="mdPartner">
+  <div class="md-wrap">
+    <div class="md-sec-head">
+      <span class="md-sec-tag">合作生态</span>
+      <h2>与麻豆日历表一起记录城市的伙伴</h2>
+      <p>我们与本地机构、文化空间和长期内容伙伴共同维护这座城市的时间档案。</p>
+    </div>
+    <div class="md-partners">
+      <div class="md-partner">城南文化馆<small>年度影像合作</small></div>
+      <div class="md-partner">老电影院计划<small>线下放映场地</small></div>
+      <div class="md-partner">街角书店联盟<small>内容共创伙伴</small></div>
+      <div class="md-partner">城市公共交通志<small>线路影像支持</small></div>
+      <div class="md-partner">社区食堂<small>美食栏目共建</small></div>
+      <div class="md-partner">本地影像器材社<small>设备与技术支持</small></div>
+    </div>
+    <div class="md-callout" style="margin-top:30px">
+      <div>
+        <h2>你的城市，也可以出现在麻豆日历表里</h2>
+        <p>无论你拍的是早市、通勤路、旧书店还是一碗面，只要它有具体的时间与地点，就值得被存档。投稿通道长期开放。</p>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="md-btn md-btn-primary" id="mdSubmitOpen2" type="button">立即投稿</button>
+        <button class="md-btn md-btn-ghost md-share-open" type="button" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.4)">分享给朋友</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== S7 FAQ + 联系 ===== -->
+<section class="md-section" id="mdFaq">
+  <div class="md-wrap">
+    <div class="md-sec-head">
+      <span class="md-sec-tag">帮助中心</span>
+      <h2>关于麻豆日历表的常见问题</h2>
+      <p>如果你还有其他疑问，可以在页面底部找到联系入口，我们会按顺序回复。</p>
+    </div>
+    <div class="md-faq">
+      <details>
+        <summary>麻豆日历表是一个什么类型的平台？</summary>
+        <p>麻豆日历表官方网站是一个以城市生活影像为核心的垂直视频平台，由企业持续运营。内容以原创短片为主，按日期组织，强调具体地点与真实记录，目前主要有城市探索、在地文化、生活方式、人物访谈与创作幕后五个方向。</p>
+      </details>
+      <details>
+        <summary>如何提交自己的作品？</summary>
+        <p>点击页面上的「投稿入口」按钮，填写作品名称、拍摄日期、地点、素材来源与联系方式即可提交。投稿后一般在 7 个工作日内给出反馈，未通过的作品会说明原因并保留在待修改列表中。</p>
+      </details>
+      <details>
+        <summary>平台的视频可以下载或二次使用吗？</summary>
+        <p>站内所有原创短片均为正版授权内容，版权归创作者与麻豆日历表共有。个人观看与分享链接不受限制；商业用途、二次剪辑或公开放映需要提前申请授权，我们会在页面中提供官方联系方式。</p>
+      </details>
+      <details>
+        <summary>成为长期合作创作者需要什么条件？</summary>
+        <p>我们更看重持续创作能力与内容的具体性，而非设备与粉丝量。通常需要至少在站内发布 5 条作品、保持稳定更新，并参与过一次专题企划。符合条件的创作者会收到站内邀请。</p>
+      </details>
+      <details>
+        <summary>为什么有些片子只有文字列表，没有封面？</summary>
+        <p>为了保持页面加载效率与阅读节奏，我们只在重点内容上使用封面图，其余条目采用文字摘要加数据的方式呈现。所有重点片子依然可以在视频页找到完整高清版本。</p>
+      </details>
+      <details>
+        <summary>榜单的排名依据是什么？</summary>
+        <p>热度榜综合播放量、完播率与互动数据；口碑榜以社区长评与收藏率为主要依据；新人榜只统计加入社区不满一年的创作者。每周一更新，数据口径在榜单页有说明。</p>
+      </details>
+      <details>
+        <summary>可以合作举办线下放映或城市项目吗？</summary>
+        <p>可以。我们长期与本地文化空间、书店、食堂与公共机构合作。合作需提供活动性质、时间与场地信息，我们会评估内容契合度后回复。合作内容同样遵循原创与正版授权原则。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== S8 页脚 ===== -->
+<footer class="md-footer">
+  <div class="md-wrap">
+    <div class="md-footer-grid">
+      <div>
+        <div class="md-footer-brand">
+          <span class="md-brand-mark" aria-hidden="true">麻</span>
+          <span>
+            <span class="md-brand-name">麻豆日历表</span>
+            <span class="md-brand-sub">MD Calendar · Official</span>
+          </span>
+        </div>
+        <p>麻豆日历表官方网站 · 城市生活影像品牌<br>以日历为索引，每天存档一页城市时间。<br>我们相信真实、温暖与陪伴，是内容最长久的力量。</p>
+      </div>
+      <div>
+        <h4>内容</h4>
+        <ul>
+          <li><a href="#mdVideo">本期视频</a></li>
+          <li><a href="#mdTopic">专题企划</a></li>
+          <li><a href="#mdRank">内容榜单</a></li>
+          <li><a href="#mdAbout">品牌解析</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>社区</h4>
+        <ul>
+          <li><a href="#mdAuthor">创作者矩阵</a></li>
+          <li><a href="#mdComment">社区短评</a></li>
+          <li><a href="#mdNews">企业动态</a></li>
+          <li><a href="#mdFaq">帮助中心</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>联系与投稿</h4>
+        <ul>
+          <li>投稿邮箱：submit@mdcalendar.example</li>
+          <li>合作咨询：partner@mdcalendar.example</li>
+          <li>办公地址：城南老城区日历街 18 号</li>
+          <li>工作时间：周一至周五 10:00–18:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="md-footer-bottom">
+      <span>© 2026 麻豆日历表 · 版权所有 · 持续运营中</span>
+      <span>广播电视节目制作经营许可（示例）| 网络文化经营许可（示例）| 备案号：示例备 2026001122 号</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== 通用交互组件 ===== -->
+<div class="md-toast" id="mdToast" role="status" aria-live="polite"></div>
+<button class="md-top" id="mdTop" aria-label="回到顶部" type="button">&#8593;</button>
+
+<!-- 评论弹窗 -->
+<div class="md-modal" id="mdCommentModal" role="dialog" aria-modal="true" aria-label="发表评论">
+  <div class="md-modal-box">
+    <h3>发表你的评论</h3>
+    <p>评论会进入社区审核，通常在一个工作日内展示。请围绕作品本身展开，不发布与内容无关的信息。</p>
+    <label for="mdCommentName">昵称</label>
+    <input id="mdCommentName" type="text" placeholder="例如：城南常客">
+    <label for="mdCommentText">评论内容</label>
+    <textarea id="mdCommentText" rows="4" placeholder="说说你在片子里看到了什么……"></textarea>
+    <div class="md-modal-foot">
+      <button class="md-btn md-btn-ghost md-modal-close" type="button">取消</button>
+      <button class="md-btn md-btn-primary" id="mdCommentSubmit" type="button">提交评论</button>
+    </div>
+  </div>
+</div>
+
+<!-- 作者弹窗 -->
+<div class="md-modal" id="mdAuthorModal" role="dialog" aria-modal="true" aria-label="作者档案">
+  <div class="md-modal-box">
+    <h3 id="mdAuthorModalName">作者档案</h3>
+    <p id="mdAuthorModalDesc"></p>
+    <div class="md-modal-foot">
+      <button class="md-btn md-btn-ghost md-modal-close" type="button">关闭</button>
+    </div>
+  </div>
+</div>
+
+<!-- 投稿弹窗 -->
+<div class="md-modal" id="mdSubmitModal" role="dialog" aria-modal="true" aria-label="投稿入口">
+  <div class="md-modal-box">
+    <h3>投稿入口</h3>
+    <p>填写作品的基本信息，我们会在 7 个工作日内通过站内消息回复。请确保素材为本人原创并已获得拍摄对象授权。</p>
+    <label for="mdSubmitTitle">作品名称</label>
+    <input id="mdSubmitTitle" type="text" placeholder="例如：城南早市十二时辰">
+    <label for="mdSubmitPlace">拍摄地点与日期</label>
+    <input id="mdSubmitPlace" type="text" placeholder="例如：城南早市 · 11 月 22 日">
+    <label for="mdSubmitContact">联系方式</label>
+    <input id="mdSubmitContact" type="text" placeholder="邮箱或手机号">
+    <div class="md-modal-foot">
+      <button class="md-btn md-btn-ghost md-modal-close" type="button">取消</button>
+      <button class="md-btn md-btn-primary" id="mdSubmitSend" type="button">提交作品</button>
+    </div>
+  </div>
+</div>
+
+<!-- 分享弹窗 -->
+<div class="md-modal" id="mdShareModal" role="dialog" aria-modal="true" aria-label="分享">
+  <div class="md-modal-box">
+    <h3>分享麻豆日历表</h3>
+    <p>选择你想分享的渠道，或直接复制页面链接发送给朋友。</p>
+    <div class="md-modal-foot" style="justify-content:flex-start;flex-wrap:wrap">
+      <button class="md-btn md-btn-navy md-share-copy" type="button">复制链接</button>
+      <button class="md-btn md-btn-ghost md-share-tip" type="button">分享到社区</button>
+      <button class="md-btn md-btn-ghost md-modal-close" type="button">关闭</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- 移动端导航折叠 ---------- */
+  var navToggle = document.getElementById('mdNavToggle');
+  var nav = document.getElementById('mdNav');
+  if (navToggle && nav) {
+    navToggle.addEventListener('click', function(){
+      var open = nav.classList.toggle('md-open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function(e){
+      if (e.target.tagName === 'A') {
+        nav.classList.remove('md-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  /* ---------- Toast ---------- */
+  var toastEl = document.getElementById('mdToast');
+  var toastTimer = null;
+  function toast(msg){
+    if (!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.classList.add('md-show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('md-show'); }, 2200);
+  }
+
+  /* ---------- 搜索反馈 ---------- */
+  var searchInput = document.getElementById('mdSearchInput');
+  var searchFeedback = document.getElementById('mdSearchFeedback');
+  var searchIndex = [
+    {k:'早市', v:'《城南早市十二时辰》· 林一帧'},
+    {k:'夜行', v:'《夜行地图：从老码头走到新桥》· 周小满'},
+    {k:'早餐', v:'《十五分钟早餐》· 阿禾'},
+    {k:'DV', v:'《把外公的DV带修成4K》· 老陈'},
+    {k:'访谈', v:'《对话林一帧》· 编辑部'},
+    {k:'专题', v:'冬日城市影像企划 / 一条片子的背面'},
+    {k:'作者', v:'林一帧、阿禾、老陈、苏黎、周小满、冯小野'},
+    {k:'林一帧', v:'创作者档案：城市探索 · 86 部作品'},
+    {k:'投稿', v:'投稿入口长期开放，7 个工作日内回复'}
+  ];
+  if (searchInput && searchFeedback) {
+    searchInput.addEventListener('input', function(){
+      var q = searchInput.value.trim();
+      if (!q) { searchFeedback.classList.remove('md-show'); searchFeedback.innerHTML=''; return; }
+      var hit = searchIndex.filter(function(item){
+        return item.k.indexOf(q) > -1 || item.v.indexOf(q) > -1;
+      });
+      searchFeedback.classList.add('md-show');
+      if (hit.length) {
+        searchFeedback.innerHTML = '找到 <strong>' + hit.length + '</strong> 条相关：' + hit.slice(0,3).map(function(h){ return h.v; }).join('；');
+      } else {
+        searchFeedback.innerHTML = '暂未收录「<strong>' + q.replace(/[<>&]/g,'') + '</strong>」相关条目，试试「早市」「专题」或「作者」。';
+      }
+    });
+    searchInput.addEventListener('keydown', function(e){
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        var q = searchInput.value.trim();
+        if (q) { toast('已为你检索「' + q + '」相关内容'); }
+      }
+    });
+  }
+
+  /* ---------- 点赞（+1 / -1 切换） ---------- */
+  var likeBtns = document.querySelectorAll('.md-like-btn');
+  Array.prototype.forEach.call(likeBtns, function(btn){
+    var base = parseInt(btn.getAttribute('data-count'), 10) || 0;
+    var liked = false;
+    btn.addEventListener('click', function(){
+      liked = !liked;
+      var n = liked ? base + 1 : base;
+      btn.innerHTML = (liked ? '&#9829;' : '&#9825;') + ' 点赞 ' + n;
+      btn.classList.toggle('md-liked', liked);
+      var counter = btn.closest('.md-focus-main') ? btn.closest('.md-focus-main').querySelector('.md-like-count') : null;
+      if (counter) counter.textContent = n;
+      toast(liked ? '已点赞，感谢你的支持' : '已取消点赞');
+    });
+  });
+
+  /* ---------- 收藏切换 ---------- */
+  var saveBtns = document.querySelectorAll('.md-save-btn');
+  Array.prototype.forEach.call(saveBtns, function(btn){
+    var saved = false;
+    btn.addEventListener('click', function(){
+      saved = !saved;
+      btn.innerHTML = (saved ? '&#9733;' : '&#9734;') + ' 收藏';
+      btn.classList.toggle('md-saved', saved);
+      toast(saved ? '已加入你的收藏夹' : '已取消收藏');
+    });
+  });
+
+  /* ---------- 复制链接 ---------- */
+  function copyText(text, okMsg){
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function(){
+        toast(okMsg || '链接已复制');
+      }).catch(function(){
+        fallbackCopy(text, okMsg);
+      });
+    } else {
+      fallbackCopy(text, okMsg);
+    }
+  }
+  function fallbackCopy(text, okMsg){
+    try {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      toast(okMsg || '链接已复制');
+    } catch(e) {
+      toast('复制失败，请手动选择文本');
+    }
+  }
+  var copyBtns = document.querySelectorAll('.md-copy-btn');
+  Array.prototype.forEach.call(copyBtns, function(btn){
+    btn.addEventListener('click', function(){
+      var title = btn.getAttribute('data-title') || '麻豆日历表';
+      copyText('麻豆日历表 · ' + title + ' · 官方内容页', '「' + title + '」链接信息已复制');
+    });
+  });
+
+  /* ---------- 弹窗通用 ---------- */
+  function openModal(id){
+    var m = document.getElementById(id);
+    if (m) m.classList.add('md-show');
+  }
+  function closeModal(m){
+    if (m) m.classList.remove('md-show');
+  }
+  var modals = document.querySelectorAll('.md-modal');
+  Array.prototype.forEach.call(modals, function(m){
+    m.addEventListener('click', function(e){
+      if (e.target === m) closeModal(m);
+    });
+  });
+  var closeBtns = document.querySelectorAll('.md-modal-close');
+  Array.prototype.forEach.call(closeBtns, function(b){
+    b.addEventListener('click', function(){
+      var m = b.closest('.md-modal');
+      closeModal(m);
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') {
+      Array.prototype.forEach.call(modals, function(m){ closeModal(m); });
+    }
+  });
+
+  /* ---------- 评论弹窗 ---------- */
+  var commentOpens = document.querySelectorAll('.md-comment-open');
+  Array.prototype.forEach.call(commentOpens, function(b){
+    b.addEventListener('click', function(){ openModal('mdCommentModal'); });
+  });
+  var commentSubmit = document.getElementById('mdCommentSubmit');
+  if (commentSubmit) {
+    commentSubmit.addEventListener('click', function(){
+      var name = document.getElementById('mdCommentName');
+      var text = document.getElementById('mdCommentText');
+      if (!text.value.trim()) { toast('请先写一点评论内容'); text.focus(); return; }
+      toast('评论已提交，等待审核展示');
+      text.value = '';
+      if (name) name.value = '';
+      closeModal(document.getElementById('mdCommentModal'));
+    });
+  }
+
+  /* ---------- 作者弹窗 ---------- */
+  var authorDesc = {
+    '林一帧':'城南常住创作者，城市探索方向招牌作者。六年如一日拍摄同一片街区，作品以长镜头、自然声与克制剪辑为特点。官方档案显示其累计上线 86 部原创短片，粉丝 18.2 万，是社区里被引用最多的创作者之一。',
+    '阿禾':'社区食堂职员，美食烹饪与生活方式方向作者。擅长用三个镜头讲完一道菜，画面干净、节奏稳定。累计作品 124 部，粉丝 21.6 万，新观众最常从她的「一人食」系列开始了解麻豆日历表。',
+    '老陈':'退休电器维修工，手作DIY与创作幕后方向作者。专注旧物修复与手艺记录，代表作《把外公的DV带修成4K》在站内播放超过 15 万。作品风格朴实，步骤讲解细致，被社区称为「最会讲步骤的人」。',
+    '苏黎':'高校教师，人物访谈与艺术美学方向作者。提问方式接近日常聊天，擅长让受访者在放松状态下说出真实想法。累计作品 41 部，粉丝 9.7 万，专题「一条片子的背面」常驻作者。',
+    '周小满':'公交司机，旅行见闻与城市探索方向作者。以车窗为取景框，连续十年记录同一条线路的街景变化。「夜行地图」系列被本地观众当作散步指南，累计作品 73 部，粉丝 15.8 万。',
+    '冯小野':'今年加入社区的新人作者，日常记录方向。用手机拍摄「下班之后」系列，画面不算精致但节奏轻快。首条作品即进入新人榜前三，累计作品 19 部，粉丝 4.3 万。'
+  };
+  var authorOpens = document.querySelectorAll('.md-author-open');
+  Array.prototype.forEach.call(authorOpens, function(b){
+    b.addEventListener('click', function(){
+      var name = b.getAttribute('data-author');
+      var nameEl = document.getElementById('mdAuthorModalName');
+      var descEl = document.getElementById('mdAuthorModalDesc');
+      if (nameEl) nameEl.textContent = name + ' · 创作者档案';
+      if (descEl) descEl.textContent = authorDesc[name] || '这位创作者正在整理档案，稍后补充完整信息。';
+      openModal('mdAuthorModal');
+    });
+  });
+
+  /* ---------- 投稿弹窗 ---------- */
+  var submitOpens = [document.getElementById('mdSubmitOpen'), document.getElementById('mdSubmitOpen2')];
+  submitOpens.forEach(function(b){
+    if (b) b.addEventListener('click', function(){ openModal('mdSubmitModal'); });
+  });
+  var submitSend = document.getElementById('mdSubmitSend');
+  if (submitSend) {
+    submitSend.addEventListener('click', function(){
+      var t = document.getElementById('mdSubmitTitle');
+      var p = document.getElementById('mdSubmitPlace');
+      var c = document.getElementById('mdSubmitContact');
+      if (!t.value.trim() || !p.value.trim() || !c.value.trim()) {
+        toast('请把作品名称、拍摄信息和联系方式填写完整');
+        return;
+      }
+      toast('投稿已提交，7 个工作日内回复');
+      t.value = ''; p.value = ''; c.value = '';
+      closeModal(document.getElementById('mdSubmitModal'));
+    });
+  }
+
+  /* ---------- 分享弹窗 ---------- */
+  var shareOpens = document.querySelectorAll('.md-share-open');
+  Array.prototype.forEach.call(shareOpens, function(b){
+    b.addEventListener('click', function(){ openModal('mdShareModal'); });
+  });
+  var shareCopy = document.querySelector('.md-share-copy');
+  if (shareCopy) {
+    shareCopy.addEventListener('click', function(){
+      copyText('麻豆日历表官方网站 · 城市生活影像品牌', '页面链接信息已复制，去分享吧');
+      closeModal(document.getElementById('mdShareModal'));
+    });
+  }
+  var shareTip = document.querySelector('.md-share-tip');
+  if (shareTip) {
+    shareTip.addEventListener('click', function(){
+      toast('已生成分享卡片，可发送到社区频道');
+      closeModal(document.getElementById('mdShareModal'));
+    });
+  }
+
+  /* ---------- 回到顶部 ---------- */
+  var topBtn = document.getElementById('mdTop');
+  if (topBtn) {
+    window.addEventListener('scroll', function(){
+      if (window.scrollY > 480) topBtn.classList.add('md-show');
+      else topBtn.classList.remove('md-show');
+    }, {passive:true});
+    topBtn.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  }
+
+  /* ---------- 卡片悬停动效增强：为视频条目添加键盘可达 ---------- */
+  var videoRows = document.querySelectorAll('.md-video-row');
+  Array.prototype.forEach.call(videoRows, function(row){
+    row.setAttribute('tabindex','0');
+    row.addEventListener('keydown', function(e){
+      if (e.key === 'Enter') {
+        row.style.borderColor = '#d9922f';
+        toast('已选中该条目，可查看详情');
+      }
+    });
+  });
+})();
+</script>
+</body>
+                </html>
